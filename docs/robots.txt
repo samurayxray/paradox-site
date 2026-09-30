@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samurayxray.github.io/paradox-site/sitemap.xml

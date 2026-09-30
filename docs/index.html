@@ -5,22 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#090a0d" />
     <meta name="description" content="Paradox Project — community italiana e internazionale di SCP: Secret Laboratory." />
+    <meta property="og:title" content="Paradox Project · SCP:SL Community" />
+    <meta property="og:description" content="Gioca, condividi e conosci la community italiana e internazionale di Paradox." />
+    <meta property="og:image" content="https://samurayxray.github.io/paradox-site/paradox-discord-banner.jpg" />
+    <meta property="og:url" content="https://samurayxray.github.io/paradox-site/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://samurayxray.github.io/paradox-site/" />
     <link rel="icon" type="image/webp" href="./paradox-discord-icon.webp" />
     <link rel="stylesheet" href="./styles.css" />
     <title>Paradox Project · SCP:SL Community</title>
   </head>
   <body>
+    <a class="skip-link" href="#contenuto">Vai al contenuto</a>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Paradox home"><img src="./paradox-discord-icon.webp" alt="" /><span>PARADOX</span></a>
-      <button class="menu-button" type="button" aria-label="Apri menu" aria-expanded="false">
+      <button class="menu-button" type="button" aria-label="Apri menu" aria-expanded="false" aria-controls="main-navigation">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
       </button>
-      <nav aria-label="Navigazione principale">
+      <nav id="main-navigation" aria-label="Navigazione principale">
         <a href="#chi-siamo">Chi siamo</a><a href="#community">Community</a><a href="#media">Media</a>
       </nav>
     </header>
 
-    <main id="top">
+    <main id="contenuto" tabindex="-1">
+      <div id="top" aria-hidden="true"></div>
       <section class="hero" aria-labelledby="title">
         <img class="hero-art" src="./paradox-discord-banner.jpg" alt="Soldato con maschera antigas sul banner ufficiale di Paradox" />
         <div class="hero-copy">
@@ -48,8 +56,8 @@
       <section id="community" class="project" aria-labelledby="project-title">
         <div class="project-intro"><img src="./paradox-discord-icon.webp" alt="Icona del server Discord Paradox" /><div><h2 id="project-title">Paradox Project <em>[Beta]</em></h2><p>Community nuova, tutta da scoprire. Minigame, media per condividere i tuoi video, vocali e chat in italiano e inglese.</p></div></div>
         <div class="status" aria-label="Stato della community">
-          <div class="status-live"><i></i><span>Discord online</span><strong data-discord-online>—</strong></div>
-          <div><span>Membri</span><strong data-discord-members>—</strong></div>
+          <div class="status-live"><i></i><span>Discord online</span><strong data-discord-online aria-live="polite">—</strong></div>
+          <div><span>Membri</span><strong data-discord-members aria-live="polite">—</strong></div>
           <div><span>Server SCP:SL</span><strong data-game-players>Non collegato</strong></div>
           <div><span>Creato</span><strong>Settembre 2026</strong></div>
         </div>
@@ -63,9 +71,33 @@
         </div>
       </section>
 
+      <section class="transparency" aria-labelledby="transparency-title">
+        <div class="transparency-copy">
+          <span class="section-label">Trasparenza</span>
+          <h2 id="transparency-title">Una community chiara,<br />senza sorprese.</h2>
+          <p>Paradox è una community informale: il sito non vende prodotti, non mostra pubblicità e non usa analytics o cookie di profilazione.</p>
+        </div>
+        <dl class="transparency-list">
+          <div><dt>01</dt><dd><strong>Nessun tracciamento</strong><span>Niente analytics, newsletter o profilazione.</span></dd></div>
+          <div><dt>02</dt><dd><strong>Dati minimi</strong><span>Mostriamo solo i conteggi pubblici dell’invito Discord.</span></dd></div>
+          <div><dt>03</dt><dd><strong>Nessun pagamento</strong><span>Nessun prezzo, abbonamento o costo nascosto.</span></dd></div>
+          <div><dt>04</dt><dd><strong>Contatto diretto</strong><span>Per domande o richieste usa i ticket del server Discord.</span></dd></div>
+        </dl>
+      </section>
+
       <section class="join" aria-label="Unisciti a Paradox"><p>Persone diverse. La stessa passione.</p><a href="https://discord.gg/AxrmbN5Ygr" target="_blank" rel="noreferrer">Unisciti alla community<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></a></section>
     </main>
-    <footer><a class="brand" href="#top"><img src="./paradox-discord-icon.webp" alt="" /><span>PARADOX</span></a><span>SCP:SL COMMUNITY · EST. 2026</span><small>Gioca · condividi · appartieni</small></footer>
+    <footer class="site-footer">
+      <div class="footer-identity"><a class="brand" href="#top"><img src="./paradox-discord-icon.webp" alt="" /><span>PARADOX</span></a><span>SCP:SL COMMUNITY · EST. 2026</span></div>
+      <nav class="footer-links" aria-label="Informazioni e documenti">
+        <a href="./privacy.html">Privacy</a>
+        <a href="./termini.html">Termini</a>
+        <a href="./cookie.html">Cookie</a>
+        <a href="./accessibilita.html">Accessibilità</a>
+        <a href="https://discord.gg/AxrmbN5Ygr" target="_blank" rel="noreferrer">Contatti</a>
+      </nav>
+      <small>Gioca · condividi · appartieni</small>
+    </footer>
     <script type="module" src="./app.js"></script>
   </body>
 </html>
