@@ -22,24 +22,26 @@ document.addEventListener('keydown', (event) => {
   menuButton.focus()
 })
 
-async function updateStatus() {
-  const onlineElement = document.querySelector('[data-discord-online]')
-  const membersElement = document.querySelector('[data-discord-members]')
-  if (!onlineElement || !membersElement) return
+const header = document.querySelector('.site-header')
 
-  try {
-    const response = await fetch('https://discord.com/api/v10/invites/AxrmbN5Ygr?with_counts=true', {
-      headers: { Accept: 'application/json' },
-    })
-    if (!response.ok) throw new Error(`Status ${response.status}`)
-    const status = await response.json()
-    onlineElement.textContent = status.approximate_presence_count ?? '—'
-    membersElement.textContent = status.approximate_member_count ?? '—'
-  } catch {
-    onlineElement.textContent = '—'
-    membersElement.textContent = '—'
-  }
+const updateHeader = () => {
+  header?.classList.toggle('scrolled', window.scrollY > 36)
 }
 
-updateStatus()
-setInterval(updateStatus, 60_000)
+updateHeader()
+window.addEventListener('scroll', updateHeader, { passive: true })
+
+const revealSections = document.querySelectorAll('.reveal')
+
+if (revealSections.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.body.classList.add('js-ready')
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return
+      entry.target.classList.add('is-visible')
+      observer.unobserve(entry.target)
+    })
+  }, { rootMargin: '0px 0px -10%', threshold: .12 })
+
+  revealSections.forEach((section) => observer.observe(section))
+}

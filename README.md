@@ -6,7 +6,7 @@ Sito pubblico di **Paradox Project [Beta]**, pubblicato gratuitamente con GitHub
 
 GitHub Pages pubblica la cartella `docs` del branch `main`.
 
-Il sito è completamente statico: non richiede Linux, No-IP, Node.js, Caddy o porte aperte sul router. I conteggi Discord vengono letti direttamente dall'invito pubblico della community.
+Il sito è completamente statico: non richiede Linux, No-IP, Node.js, Caddy o porte aperte sul router.
 
 ## Trasparenza e accessibilità
 
